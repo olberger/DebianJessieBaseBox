@@ -1,7 +1,7 @@
-Debian Jessie base box, up to date
-----------------------------------
+Debian Jessie base box for Vagrant, up to date
+----------------------------------------------
 
-Use boostrap-vz [0] from the git 'devlopment' branch, run on Debian
+Use [boostrap-vz](http://andsens.github.io/bootstrap-vz/) from the git 'devlopment' branch, run on Debian
 testing/jessie to generate an image, using the manifest provided in
 'bootstrap-vz-manifests/'.
 
@@ -55,8 +55,6 @@ TODOs :
 -------
 * none currently
 
-
-[0] http://andsens.github.io/bootstrap-vz/
 [1] https://vagrantcloud.com/oberger/
 [2] https://github.com/andsens/bootstrap-vz/issues/127
 
