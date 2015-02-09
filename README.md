@@ -1,21 +1,31 @@
 Debian Jessie base box for Vagrant, up to date
 ----------------------------------------------
 
+This repository holds a configuration file for bootstrap-vz, meant to
+create a minimal Debian Jessie base box to be used in Vagrantfiles.
+
 Use [boostrap-vz](http://andsens.github.io/bootstrap-vz/) from the git 'devlopment' branch, run on Debian
 testing/jessie to generate an image, using the manifest provided in
 'bootstrap-vz-manifests/'.
 
 Syntax : sudo ./bootstrap-vz --debug --log logs bootstrap-vz-manifests/virtualbox-vagrant.manifest.yml
 
-Then upload it to vagrantcloud.
+Note:
+ * set the correct 'architecture': 'amd64' or 'i386' in the manifest file.
 
-Cf. oberger/debianjessiemini-[amd64|i686] vagrantcloud image for releases [1].
+The resulting bas box will be found in /target/debian-jessie-amd64-YYMMDD.box
+
+Then upload it to vagrantcloud/atlas.hashicorp.com.
+
+Cf. "oberger/debianjessiemini-[amd64|i686]"
+[on vagrantcloud](https://vagrantcloud.com/oberger/) for releases of
+the boxes.
 
 Notes :
 -------
 
 * The following patch may be needed to fix a volume size calculation
-  (see [2]):
+  (see it [on github](https://github.com/andsens/bootstrap-vz/issues/127)):
 
 ```diff
 diff --git a/bootstrapvz/common/fs/qemuvolume.py b/bootstrapvz/common/fs/qemuvolume.py
@@ -51,13 +61,9 @@ index e440ca7..36721d1 100644
 +    }
 ```
 
-* set the correct 'architecture': 'amd64' or 'i386' in the manifest file.
-
 
 TODOs :
 -------
 * none currently
 
-[1] https://vagrantcloud.com/oberger/
-[2] https://github.com/andsens/bootstrap-vz/issues/127
 
