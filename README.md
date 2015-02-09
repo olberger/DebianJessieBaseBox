@@ -17,6 +17,7 @@ Notes :
 * The following patch may be needed to fix a volume size calculation
   (see [2]):
 
+```diff
 diff --git a/bootstrapvz/common/fs/qemuvolume.py b/bootstrapvz/common/fs/qemuvolume.py
 index 2f9adfe..955621d 100644
 --- a/bootstrapvz/common/fs/qemuvolume.py
@@ -31,10 +32,12 @@ index 2f9adfe..955621d 100644
  
         def _check_nbd_module(self):
 
+```
 
 * The following patch makes use of zerofree to diminish the box size
   by trimming unused disk space :
 
+```diff
 diff --git a/manifests/virtualbox-vagrant.manifest.yml b/manifests/virtualbox-vagrant.manifest.yml
 index e440ca7..36721d1 100644
 --- a/manifests/virtualbox-vagrant.manifest.yml
@@ -46,7 +49,7 @@ index e440ca7..36721d1 100644
 +  minimize_size : {
 +    zerofree: true
 +    }
-
+```
 
 * set the correct 'architecture': 'amd64' or 'i386' in the manifest file.
 
