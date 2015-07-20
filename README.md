@@ -4,7 +4,7 @@ Debian Jessie base box for Vagrant, up to date
 This repository holds a configuration file for bootstrap-vz, meant to
 create a minimal Debian Jessie base box to be used in Vagrantfiles.
 
-Use [boostrap-vz](http://andsens.github.io/bootstrap-vz/) from the git 'devlopment' branch, run on Debian
+Use [boostrap-vz](http://andsens.github.io/bootstrap-vz/) from the git 'development' branch, run on Debian
 testing/jessie to generate an image, using the manifest provided in
 'bootstrap-vz-manifests/'.
 
